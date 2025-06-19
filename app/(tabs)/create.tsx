@@ -4,7 +4,7 @@ import React from 'react';
 export default function Create() {
   return (
     <View>
-      <Text>create</Text>
+      <Text>Create screen</Text>
     </View>
   );
 }
