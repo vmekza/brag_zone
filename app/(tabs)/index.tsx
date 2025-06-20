@@ -5,7 +5,7 @@ import { styles } from '../../styles/auth.styles';
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Link href='/notifications'>visit notifications screen</Link>
+      <Link href='/notifications'>Feed screen in tabs</Link>
     </View>
   );
 }

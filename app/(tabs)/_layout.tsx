@@ -1,9 +1,25 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
+import { COLORS } from '../../constants/theme';
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarShowLabel: false }}>
+    <Tabs
+      screenOptions={{
+        tabBarShowLabel: false,
+        headerShown: false,
+        tabBarActiveTintColor: COLORS.primary,
+        tabBarInactiveTintColor: COLORS.gray,
+        tabBarStyle: {
+          backgroundColor: COLORS.background,
+          borderTopWidth: 0,
+          position: 'absolute',
+          elevation: 0,
+          height: 40,
+          paddingBottom: 8,
+        },
+      }}
+    >
       <Tabs.Screen
         name='index'
         options={{
@@ -23,8 +39,12 @@ export default function TabLayout() {
       <Tabs.Screen
         name='create'
         options={{
-          tabBarIcon: ({ size, color }) => (
-            <Ionicons name='add-circle-outline' size={size} color={color} />
+          tabBarIcon: ({ size }) => (
+            <Ionicons
+              name='add-circle-outline'
+              size={size}
+              color={COLORS.primary}
+            />
           ),
         }}
       />
