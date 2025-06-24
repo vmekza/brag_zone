@@ -1,6 +1,5 @@
 import { ResizeMode, Video } from 'expo-av';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
 import { Text, View } from 'react-native';
 import { styles } from '../../styles/auth.styles';
 
@@ -17,8 +16,11 @@ export default function Login() {
         isMuted
       />
       <View style={styles.overlay}>
-        <Text style={styles.appName}>one more</Text>
-        <Text style={styles.tagLine}>...cause it's never too much</Text>
+        <View style={styles.textBlock}>
+          <Text style={styles.appName}>brag zone</Text>
+          <Text style={styles.tagLine}>where every flex tell a story.</Text>
+          <Text style={styles.tagLine}>share yours.</Text>
+        </View>
       </View>
     </View>
   );

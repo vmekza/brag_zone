@@ -16,7 +16,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 40,
+    paddingBottom: 250,
+  },
+  textBlock: {
+    alignItems: 'flex-start',
   },
   brandSection: {
     alignItems: 'center',
@@ -24,7 +27,7 @@ export const styles = StyleSheet.create({
   },
   appName: {
     fontSize: 42,
-    fontWeight: '700',
+    fontWeight: '600',
     fontFamily: 'Helvetica Neue',
     color: COLORS.primary,
     letterSpacing: 0.5,
@@ -34,19 +37,8 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     color: COLORS.gray,
     letterSpacing: 1,
-    textTransform: 'lowercase',
+    // textTransform: 'lowercase',
   },
-  // imageContainer: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   // paddingHorizontal: 40,
-  // },
-  // backgroundImage: {
-  //   flex: 1,
-  //   width: '100%',
-  //   height: '100%',
-  // },
   loginSection: {
     width: '100%',
     paddingHorizontal: 24,
