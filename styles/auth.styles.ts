@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: 'relative',
+    backgroundColor: COLORS.background,
   },
   video: {
     ...StyleSheet.absoluteFillObject,
@@ -16,7 +17,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 250,
+    paddingBottom: 80,
   },
   textBlock: {
     alignItems: 'flex-start',
@@ -30,14 +31,14 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     fontFamily: 'Helvetica Neue',
     color: COLORS.primary,
-    letterSpacing: 0.5,
-    marginBottom: 8,
+    letterSpacing: 1.5,
+    marginBottom: 15,
   },
   tagLine: {
-    fontSize: 18,
+    fontSize: 20,
     color: COLORS.gray,
-    letterSpacing: 1,
-    // textTransform: 'lowercase',
+    letterSpacing: 1.2,
+    textTransform: 'lowercase',
   },
   loginSection: {
     width: '100%',
@@ -49,12 +50,12 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.gray,
     paddingVertical: 16,
     paddingHorizontal: 24,
     borderRadius: 14,
     marginBottom: 20,
-    width: '100%',
+    width: '83%',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
