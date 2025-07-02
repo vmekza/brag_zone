@@ -34,9 +34,10 @@ export default function Login() {
         source={require('@/assets/images/video.mp4')}
         style={styles.video}
         resizeMode={ResizeMode.COVER}
-        shouldPlay
-        isLooping
-        isMuted
+        shouldPlay // start playing as soon as it’s mounted
+        isLooping // repeat forever
+        isMuted // ← mute it so iOS will autoplay
+        useNativeControls={false} // ← hide that play button overlay
       />
       <View style={styles.overlay}>
         <View style={styles.textBlock}>

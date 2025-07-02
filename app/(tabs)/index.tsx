@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
 import { View } from 'react-native';
-import { styles } from '../../styles/auth.styles';
+import { styles } from '../../styles/tabs.styles';
 
 export default function Index() {
   return (

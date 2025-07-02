@@ -7,11 +7,15 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: 'relative',
-    backgroundColor: COLORS.background,
+    // backgroundColor: COLORS.background,
   },
   video: {
     ...StyleSheet.absoluteFillObject,
-    zIndex: -1,
+    zIndex: -5,
+    // height: 300, // <- definite height
+    // backgroundColor: 'red',
+    // or Dimensions.get('window').width
+    // or Dimensions.get('window').height
   },
   overlay: {
     flex: 1,
