@@ -17,7 +17,6 @@ export default function Login() {
       });
       if (setActive && createdSessionId) {
         setActive({ session: createdSessionId });
-        // Navigate to the home screen after successful login
         router.replace('/(tabs)');
       }
     } catch (error) {
@@ -34,10 +33,10 @@ export default function Login() {
         source={require('@/assets/images/video.mp4')}
         style={styles.video}
         resizeMode={ResizeMode.COVER}
-        shouldPlay // start playing as soon as it’s mounted
-        isLooping // repeat forever
-        isMuted // ← mute it so iOS will autoplay
-        useNativeControls={false} // ← hide that play button overlay
+        shouldPlay
+        isLooping
+        isMuted
+        useNativeControls={false}
       />
       <View style={styles.overlay}>
         <View style={styles.textBlock}>

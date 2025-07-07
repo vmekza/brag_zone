@@ -12,10 +12,6 @@ export const styles = StyleSheet.create({
   video: {
     ...StyleSheet.absoluteFillObject,
     zIndex: -5,
-    // height: 300, // <- definite height
-    // backgroundColor: 'red',
-    // or Dimensions.get('window').width
-    // or Dimensions.get('window').height
   },
   overlay: {
     flex: 1,
