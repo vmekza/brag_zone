@@ -1,9 +1,10 @@
-import { View, Text } from 'react-native';
 import React from 'react';
+import { Text, View } from 'react-native';
+import { COLORS } from '../../constants/theme';
 
 export default function Profile() {
   return (
-    <View>
+    <View style={{ flex: 1, backgroundColor: COLORS.background }}>
       <Text>Profile Screen</Text>
     </View>
   );
