@@ -10,6 +10,7 @@ import React from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS } from '../../constants/theme';
 import { styles } from '../../styles/feed.styles';
+
 export default function Index() {
   const { signOut } = useAuth();
 
@@ -17,6 +18,7 @@ export default function Index() {
 
   if (posts === undefined) return <Loader />;
   if (posts.length === 0) return <NoPosts />;
+
   return (
     <View style={styles.container}>
       {/* header section */}
@@ -27,7 +29,10 @@ export default function Index() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 80 }}
+      >
         {/* content section */}
         <ScrollView
           horizontal

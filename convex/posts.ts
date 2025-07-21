@@ -49,7 +49,7 @@ export const getPosts = query({
     // Fetch user data for each post
     const postsWithUserData = await Promise.all(
       posts.map(async (post) => {
-        const postCreator = await ctx.db.get(post.userId);
+        const postCreator = (await ctx.db.get(post.userId))!;
 
         const like = await ctx.db
           .query('likes')
@@ -79,5 +79,49 @@ export const getPosts = query({
     );
 
     return postsWithUserData;
+  },
+});
+
+export const changeLike = mutation({
+  args: { postId: v.id('posts') },
+  handler: async (ctx, args) => {
+    const currentUser = await getAuthUser(ctx);
+
+    // check if the user has already liked the post
+    const existingLike = await ctx.db
+      .query('likes')
+      .withIndex('by_user_and_post', (q) =>
+        q.eq('userId', currentUser._id).eq('postId', args.postId)
+      )
+      .first();
+
+    const post = await ctx.db.get(args.postId);
+    if (!post) {
+      throw new Error('Post not found');
+    }
+    if (existingLike) {
+      // If the user has already liked the post, remove the like
+      await ctx.db.delete(existingLike._id);
+      await ctx.db.patch(args.postId, { likes: post.likes - 1 });
+      return false;
+    } else {
+      // If the user has not liked the post, add a like
+      await ctx.db.insert('likes', {
+        userId: currentUser._id,
+        postId: args.postId,
+      });
+      await ctx.db.patch(post._id, { likes: post.likes + 1 });
+
+      // notification if it is not the current user post
+      if (currentUser._id !== post.userId) {
+        await ctx.db.insert('notifications', {
+          receiverId: post.userId,
+          senderId: currentUser._id,
+          type: 'like',
+          postId: args.postId,
+        });
+      }
+      return true;
+    }
   },
 });
